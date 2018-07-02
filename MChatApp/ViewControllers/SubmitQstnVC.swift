@@ -37,7 +37,9 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
     @IBAction func profile(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier:"popOver") as! SignOutPopVC
         vc.signOutDelegate = self
-        vc.preferredContentSize = CGSize(width:100, height:100)
+//        vc.userEmailLBL.text = userName
+//        vc.preferredContentSize = CGSize(width:100, height:100)
+        vc.preferredContentSize = CGSize(width:(UIScreen.main.bounds.width)*0.5, height:100)
         vc.modalPresentationStyle = UIModalPresentationStyle.popover
         let popOver = vc.popoverPresentationController
         popOver?.delegate = self

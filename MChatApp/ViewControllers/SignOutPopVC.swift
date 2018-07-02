@@ -15,11 +15,13 @@ protocol signOutDelegate {
 }
 
 class SignOutPopVC: UIViewController {
+     @IBOutlet weak var userEmailLBL: UILabel!
     var signOutDelegate : signOutDelegate?
+     var userName:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        print(userEmailLBL.text as Any)
     }
 
     override func didReceiveMemoryWarning() {
