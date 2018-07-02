@@ -168,12 +168,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cad-tN-KXE">
-                                <rect key="frame" x="158" y="329" width="59" height="47"/>
+                                <rect key="frame" x="147.5" y="338" width="80" height="32"/>
                                 <color key="backgroundColor" red="0.8862745098" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="175" id="bFq-BZ-5p6"/>
+                                    <constraint firstAttribute="width" constant="80" id="Tst-wU-hdT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Sign Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -181,26 +181,23 @@
                                     <action selector="signOut:" destination="Uc2-hi-MVI" eventType="touchUpInside" id="lim-7D-lyp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dedeepyareddy255@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rt-jY-53h">
-                                <rect key="frame" x="15" y="295" width="345" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hellod13489471@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rt-jY-53h">
+                                <rect key="frame" x="99.5" y="313" width="176.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cad-tN-KXE" firstAttribute="centerX" secondItem="2rt-jY-53h" secondAttribute="centerX" id="6C5-qe-YIk"/>
-                            <constraint firstItem="2rt-jY-53h" firstAttribute="top" secondItem="wYy-eP-s6m" secondAttribute="top" constant="275" id="B82-eg-9im"/>
-                            <constraint firstItem="2rt-jY-53h" firstAttribute="centerX" secondItem="vLs-90-xsS" secondAttribute="centerX" id="BbP-PJ-Gey"/>
-                            <constraint firstItem="cad-tN-KXE" firstAttribute="centerY" secondItem="wYy-eP-s6m" secondAttribute="centerY" constant="9" id="ORC-aZ-Mrk"/>
-                            <constraint firstItem="cad-tN-KXE" firstAttribute="top" secondItem="2rt-jY-53h" secondAttribute="bottom" constant="13" id="UF7-H6-sit"/>
-                            <constraint firstItem="2rt-jY-53h" firstAttribute="leading" secondItem="wYy-eP-s6m" secondAttribute="leading" constant="15" id="qxk-jv-cdu"/>
+                            <constraint firstItem="2rt-jY-53h" firstAttribute="centerX" secondItem="cad-tN-KXE" secondAttribute="centerX" id="C60-Qy-GBs"/>
+                            <constraint firstItem="cad-tN-KXE" firstAttribute="centerY" secondItem="wYy-eP-s6m" secondAttribute="centerY" constant="10" id="Iw4-UX-tiG"/>
+                            <constraint firstItem="cad-tN-KXE" firstAttribute="centerX" secondItem="wYy-eP-s6m" secondAttribute="centerX" id="U5Z-Du-NvT"/>
+                            <constraint firstItem="cad-tN-KXE" firstAttribute="top" secondItem="2rt-jY-53h" secondAttribute="bottom" constant="8" id="ibP-Rp-fb6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wYy-eP-s6m"/>
                     </view>
                     <connections>
-                        <outlet property="userEmailLBL" destination="2rt-jY-53h" id="CN4-nI-Nve"/>
+                        <outlet property="userEmailLBL" destination="2rt-jY-53h" id="uF2-Nf-Rgk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AY-kh-sqH" userLabel="First Responder" sceneMemberID="firstResponder"/>

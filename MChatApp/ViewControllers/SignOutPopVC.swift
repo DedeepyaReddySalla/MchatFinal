@@ -11,7 +11,7 @@ import FirebaseAuth
 import GoogleSignIn
 
 protocol signOutDelegate {
-    func signOut()
+    func authsignOut()
 }
 
 class SignOutPopVC: UIViewController {
@@ -21,7 +21,11 @@ class SignOutPopVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(userEmailLBL.text as Any)
+         userEmailLBL.text = userName
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        userEmailLBL.text = userName
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +36,7 @@ class SignOutPopVC: UIViewController {
     //First pop-up is dismissed and then sign out functionality is implemented
     @IBAction func signOut(_ sender: Any) {
         self.dismiss(animated:true, completion:nil)
-        signOutDelegate?.signOut()
+        signOutDelegate?.authsignOut()
     }
     
    

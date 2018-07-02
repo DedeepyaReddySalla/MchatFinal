@@ -37,6 +37,7 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
     @IBAction func profile(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier:"popOver") as! SignOutPopVC
         vc.signOutDelegate = self
+        vc.userName = userName
 //        vc.userEmailLBL.text = userName
 //        vc.preferredContentSize = CGSize(width:100, height:100)
         vc.preferredContentSize = CGSize(width:(UIScreen.main.bounds.width)*0.5, height:100)
@@ -46,13 +47,14 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
         popOver?.barButtonItem = sender as? UIBarButtonItem
         self.present(vc, animated:true, completion:nil)
     }
+    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
     
     
     //in signOut first, app is signed out from firebase and then submit vc is removed from stack
-    func signOut(){
+    func authsignOut(){
         if Auth.auth().currentUser != nil {
             UserDefaults.standard.set(false, forKey: "userLoggedIn")
             GIDSignIn.sharedInstance().signOut()
@@ -65,7 +67,7 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
         /*check if you have sign in vc in stack, if it is present then first
          remove the signIn VC from navigation stack array, so when you pop this vc..
          you will be directed to home page */
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated:true)
     }
     
     @IBAction func submitQstn(_ sender: Any) {
