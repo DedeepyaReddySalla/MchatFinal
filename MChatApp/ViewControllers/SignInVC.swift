@@ -12,6 +12,7 @@ import GoogleSignIn
 
 class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     @IBOutlet weak var googlSignInCustomBtn: GIDSignInButton!
+    var activityIndicatr:UIActivityIndicatorView = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -36,9 +37,10 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //After signs  into his gmail account n gives permission, this method is called
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // ...
         //        self.navigationController?.popViewController(animated: true)
+        loadingStarted() //using activity indicator to indicate loading
         if let error = error {
             print(error.localizedDescription)
             return
@@ -49,13 +51,13 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
                                                        accessToken: authentication.accessToken)
         // ...
         let submitVC:SubmitQstnVC = (storyboard!.instantiateViewController(withIdentifier: "SubmitQstnVCIden") as? SubmitQstnVC)!
-        
-        //app signing in to get user credentials from gmail server
+        //app signing in to get user credentials from gmail server, using tokens
         Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
+             self.loadingEnded() //stopping activity indicator as all loading will be done by this line
             //MARK: - Navigation
             if let userName = user?.email{
                 print(userName as Any)
@@ -69,14 +71,16 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func loadingStarted(){
+        activityIndicatr.center = self.view.center
+        activityIndicatr.hidesWhenStopped = true
+        activityIndicatr.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicatr)
+        activityIndicatr.startAnimating()
     }
-    */
+    
+    func loadingEnded(){
+       activityIndicatr.stopAnimating()
+    }
 
 }

@@ -10,10 +10,9 @@ import UIKit
 import GoogleSignIn
 
 class HomeVC: UIViewController {
-//  var userName:String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,17 +25,16 @@ class HomeVC: UIViewController {
             let submitVC:SubmitQstnVC = (storyboard!.instantiateViewController(withIdentifier: "SubmitQstnVCIden") as? SubmitQstnVC)!
             if let userEmail = user.profile.email
             {
-//              userName = userEmail
                 submitVC.userName = userEmail
                 print(userEmail)
                 self.navigationController?.pushViewController(submitVC, animated: true)
             }
-        }
-        else
-        {
-            let signInVC:SignInVC = (storyboard!.instantiateViewController(withIdentifier: "SignInIden") as? SignInVC)!
-            self.navigationController?.pushViewController(signInVC, animated: true)
-        }
+            }
+            else
+            {
+                let signInVC:SignInVC = (storyboard!.instantiateViewController(withIdentifier: "SignInIden") as? SignInVC)!
+                self.navigationController?.pushViewController(signInVC, animated: true)
+            }
     }
     
 }

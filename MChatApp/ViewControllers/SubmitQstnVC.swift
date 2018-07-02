@@ -6,15 +6,6 @@
 //  Copyright © 2018 Motion Mentoring Org. All rights reserved.
 //
 
-//        let firebaseAuth = Auth.auth()
-//            do {
-//                try Auth.auth().signOut()
-//                self.navigationController?.popViewController(animated: true)
-//            }
-//            catch {
-//            }
-
-
 import UIKit
 import MessageUI
 import FirebaseAuth
@@ -52,7 +43,6 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
         return .none
     }
     
-    
     //in signOut first, app is signed out from firebase and then submit vc is removed from stack
     func authsignOut(){
         if Auth.auth().currentUser != nil {
@@ -64,9 +54,6 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
 
     func goToHomePage()
     {
-        /*check if you have sign in vc in stack, if it is present then first
-         remove the signIn VC from navigation stack array, so when you pop this vc..
-         you will be directed to home page */
         self.navigationController?.popToRootViewController(animated:true)
     }
     
@@ -98,15 +85,5 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated:true, completion:nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

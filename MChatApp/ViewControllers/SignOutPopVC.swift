@@ -21,16 +21,15 @@ class SignOutPopVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         userEmailLBL.text = userName
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        userEmailLBL.text = userName
+        userEmailLBL.text = userName
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //First pop-up is dismissed and then sign out functionality is implemented
@@ -39,16 +38,4 @@ class SignOutPopVC: UIViewController {
         signOutDelegate?.authsignOut()
     }
     
-   
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
