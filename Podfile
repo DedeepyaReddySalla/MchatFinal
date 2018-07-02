@@ -6,7 +6,6 @@ target 'MChatApp' do
   use_frameworks!
 
   # Pods for MChatApp
-
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
