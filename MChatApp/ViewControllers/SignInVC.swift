@@ -44,7 +44,7 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     }
     //After signs  into his gmail account n gives permission, this method is called
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        //        self.navigationController?.popViewController(animated: true)
+        
         loadingStarted() //using activity indicator to indicate loading
         if let error = error {
             print(error.localizedDescription)
@@ -87,5 +87,10 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     func loadingEnded(){
        activityIndicatr.stopAnimating()
     }
-
+    
+//    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+//        self.navigationController?.popViewController(animated: true)
+//      let vc = segue.destination as? SubmitQstnVC
+//        vc?.signInVCObj = self
+//    }
 }

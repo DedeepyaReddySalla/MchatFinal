@@ -13,9 +13,6 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         //navigation title n button colors for all views in current root navigation
-//        self.navigationController?.navigationBar.tintColor = UIColor.red
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:  UIColor.red]
     }
 
     override func didReceiveMemoryWarning() {

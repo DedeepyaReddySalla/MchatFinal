@@ -14,10 +14,17 @@ import GoogleSignIn
 
 class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPopoverPresentationControllerDelegate, signOutDelegate {
     @IBOutlet weak var userNameLBL: UILabel!
+//    var signInVCObj:SignInVC?
      var userName:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var viewControllers = navigationController?.viewControllers
+        print(" COUNT \(String(describing: viewControllers?.count))")
+        if(viewControllers?.count == 3){
+            viewControllers?.remove(at:1) //here 2 views to pop index numbers of views
+            navigationController?.setViewControllers(viewControllers!, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
