@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //navigation title n button colors for all navigations in app
+        UINavigationBar.appearance().tintColor = UIColor(red: 226/255, green: 43/255, blue: 62/255, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor(red: 226/255, green: 43/255, blue: 62/255, alpha: 1)]
+        
        FirebaseApp.configure()
        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
        GIDSignIn.sharedInstance().delegate = self

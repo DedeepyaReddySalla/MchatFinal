@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -90,7 +89,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="iyn-a3-n7I">
                         <barButtonItem key="rightBarButtonItem" title="?" id="9xd-uV-Fh9">
-                            <color key="tintColor" red="0.8862745098" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="jJu-JH-XpB" kind="show" id="Beg-bC-7fq"/>
                             </connections>
@@ -145,14 +143,11 @@
                         <viewLayoutGuide key="safeArea" id="Ads-G6-EJj"/>
                     </view>
                     <navigationItem key="navigationItem" id="yTI-W1-MJK">
-                        <rightBarButtonItems>
-                            <barButtonItem title="profile" id="3IP-ve-fkn">
-                                <connections>
-                                    <action selector="profile:" destination="o19-ax-ta9" id="b08-Zu-lvQ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Home" id="djn-Zs-CZf"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="profile" id="3IP-ve-fkn">
+                            <connections>
+                                <action selector="profile:" destination="o19-ax-ta9" id="b08-Zu-lvQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yP-7F-5zP" userLabel="First Responder" sceneMemberID="firstResponder"/>
