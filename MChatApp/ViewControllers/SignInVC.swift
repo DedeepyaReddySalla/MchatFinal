@@ -20,6 +20,9 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         
     //button customization
+         googlSignInCustomBtn.isHidden = false
+         googlSignInCustomBtn.center = view.center
+
 //        let btnSize: CGFloat = 200
 //        googlSignInCustomBtn.layer.cornerRadius = 10
 //        googlSignInCustomBtn.layer.masksToBounds = true
@@ -28,7 +31,6 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
 //        googlSignInCustomBtn.layer.shadowColor = UIColor.gray.cgColor
 //        googlSignInCustomBtn.layer.shadowOffset = CGSize(width:200, height: 200)
 //        googlSignInCustomBtn.frame = CGRect(x: 0, y: 0, width:btnSize, height:btnSize)
-//        googlSignInCustomBtn.center = view.center
         
     }
 
@@ -37,6 +39,9 @@ class SignInVC: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        googlSignInCustomBtn.isHidden = true
+    }
     //After signs  into his gmail account n gives permission, this method is called
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         //        self.navigationController?.popViewController(animated: true)
