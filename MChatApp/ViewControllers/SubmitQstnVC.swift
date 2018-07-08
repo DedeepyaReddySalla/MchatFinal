@@ -20,7 +20,7 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
     override func viewDidLoad() {
         super.viewDidLoad()
         var viewControllers = navigationController?.viewControllers
-        print(" COUNT \(String(describing: viewControllers?.count))")
+//        print(" COUNT \(String(describing: viewControllers?.count))")
         if(viewControllers?.count == 3){
             viewControllers?.remove(at:1) //here 2 views to pop index numbers of views
             navigationController?.setViewControllers(viewControllers!, animated: true)
@@ -78,6 +78,7 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
         mailComposerVC.mailComposeDelegate = self
         mailComposerVC.setToRecipients(["dedeepyareddy255@gmail.com"])
         mailComposerVC.setSubject("Hello")
+        mailComposerVC.setMessageBody("I have this below problem", isHTML:false)
         mailComposerVC.setMessageBody("message body", isHTML:false)
         return mailComposerVC
     }
