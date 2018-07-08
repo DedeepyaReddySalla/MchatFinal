@@ -327,7 +327,7 @@
                         <viewLayoutGuide key="safeArea" id="7Er-5T-kjD"/>
                     </view>
                     <connections>
-                        <outlet property="assesorImage" destination="Wkd-vX-Vls" id="23a-Cs-n97"/>
+                        <outlet property="assesorImgView" destination="Wkd-vX-Vls" id="p6M-kr-IbD"/>
                         <outlet property="desc" destination="POi-aV-9nK" id="sjO-ah-smb"/>
                     </connections>
                 </viewController>
