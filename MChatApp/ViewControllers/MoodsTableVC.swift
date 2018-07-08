@@ -55,16 +55,16 @@ class MoodsTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        let vc = segue.destination as? MoodAssesorVC
-        //        if let vc = vc{
-        //            vc.assesor = assesorResult
-        //            //            if let result = assesorResult
-        //            //            {
-        //            //                print("segue:\(result.assesorDesc)")
-        //            //            }
-        //
-        //        }
-    
+                let vc = segue.destination as? MoodsAssesorVC
+                if let vc = vc{
+                    if let assesorResult = assesorResult{
+                         vc.assesor = assesorResult
+                    }
+                }
     }
 
+    //            if let result = assesorResult
+    //            {
+    //                print("segue:\(result.assesorDesc)")
+    //            }
 }

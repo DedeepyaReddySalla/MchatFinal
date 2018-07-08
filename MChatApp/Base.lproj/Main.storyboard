@@ -298,12 +298,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-t6-8JA">
-                                <rect key="frame" x="51" y="194" width="286" height="279"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Kex-t6-8JA" secondAttribute="height" multiplier="286:279" id="Rq2-UQ-T8o"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POi-aV-9nK">
                                 <rect key="frame" x="85" y="597" width="178" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -311,6 +305,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wkd-vX-Vls">
+                                <rect key="frame" x="51" y="200" width="286" height="253"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wkd-vX-Vls" secondAttribute="height" multiplier="26:23" id="B6q-CV-52y"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -318,16 +318,16 @@
                             <constraint firstItem="0YG-Xn-cD5" firstAttribute="leading" secondItem="7Er-5T-kjD" secondAttribute="leading" constant="51" id="E0y-mF-qSc"/>
                             <constraint firstItem="7Er-5T-kjD" firstAttribute="trailing" secondItem="0YG-Xn-cD5" secondAttribute="trailing" constant="38" id="KVF-BG-gbk"/>
                             <constraint firstItem="7Er-5T-kjD" firstAttribute="trailing" secondItem="4FB-mT-ff3" secondAttribute="trailing" constant="46" id="LjR-95-Hre"/>
-                            <constraint firstItem="Kex-t6-8JA" firstAttribute="leading" secondItem="0YG-Xn-cD5" secondAttribute="leading" id="M3F-hY-dLX"/>
                             <constraint firstItem="4FB-mT-ff3" firstAttribute="leading" secondItem="7Er-5T-kjD" secondAttribute="leading" constant="60" id="Qfi-k4-U7B"/>
-                            <constraint firstItem="Kex-t6-8JA" firstAttribute="top" secondItem="0YG-Xn-cD5" secondAttribute="bottom" constant="41" id="cer-np-ExF"/>
+                            <constraint firstItem="Wkd-vX-Vls" firstAttribute="trailing" secondItem="0YG-Xn-cD5" secondAttribute="trailing" id="b9G-Xu-rjL"/>
+                            <constraint firstItem="Wkd-vX-Vls" firstAttribute="leading" secondItem="0YG-Xn-cD5" secondAttribute="leading" id="iwa-Pe-hkm"/>
+                            <constraint firstItem="Wkd-vX-Vls" firstAttribute="top" secondItem="0YG-Xn-cD5" secondAttribute="bottom" constant="47" id="kPe-fH-3NH"/>
                             <constraint firstItem="0YG-Xn-cD5" firstAttribute="top" secondItem="7Er-5T-kjD" secondAttribute="top" constant="59" id="mha-Hr-YxP"/>
-                            <constraint firstItem="Kex-t6-8JA" firstAttribute="trailing" secondItem="0YG-Xn-cD5" secondAttribute="trailing" id="o3P-sS-TVv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Er-5T-kjD"/>
                     </view>
                     <connections>
-                        <outlet property="assesorImg" destination="Kex-t6-8JA" id="6Pj-uz-VYE"/>
+                        <outlet property="assesorImage" destination="Wkd-vX-Vls" id="23a-Cs-n97"/>
                         <outlet property="desc" destination="POi-aV-9nK" id="sjO-ah-smb"/>
                     </connections>
                 </viewController>
