@@ -13,9 +13,10 @@ import GoogleSignIn
 
 
 class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPopoverPresentationControllerDelegate, signOutDelegate {
+    //    var signInVCObj:SignInVC?
     @IBOutlet weak var userNameLBL: UILabel!
-//    var signInVCObj:SignInVC?
      var userName:String?
+    @IBOutlet weak var qstnTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
             viewControllers?.remove(at:1) //here 2 views to pop index numbers of views
             navigationController?.setViewControllers(viewControllers!, animated: true)
         }
+//        let button1 = UIBarButtonItem(image: UIImage(named: "imagename"), style: .plain, target: self, action: Selector("action"))
+        let profileBarBtn = UIBarButtonItem(title:"Profile", style:UIBarButtonItemStyle.plain, target:self, action:#selector(SubmitQstnVC.profile(_:)))
+        self.navigationItem.rightBarButtonItem  = profileBarBtn
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,19 +36,34 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func profile(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier:"popOver") as! SignOutPopVC
-        vc.signOutDelegate = self
-        vc.userName = userName
-//        vc.userEmailLBL.text = userName
-//        vc.preferredContentSize = CGSize(width:100, height:100)
-        vc.preferredContentSize = CGSize(width:(UIScreen.main.bounds.width)*0.5, height:100)
-        vc.modalPresentationStyle = UIModalPresentationStyle.popover
-        let popOver = vc.popoverPresentationController
-        popOver?.delegate = self
-        popOver?.barButtonItem = sender as? UIBarButtonItem
-        self.present(vc, animated:true, completion:nil)
-    }
+    @objc func profile(_ sender: Any) {
+            let vc = storyboard?.instantiateViewController(withIdentifier:"popOver") as! SignOutPopVC
+            vc.signOutDelegate = self
+            vc.userName = userName
+    //        vc.userEmailLBL.text = userName
+    //        vc.preferredContentSize = CGSize(width:100, height:100)
+            vc.preferredContentSize = CGSize(width:(UIScreen.main.bounds.width)*0.5, height:100)
+            vc.modalPresentationStyle = UIModalPresentationStyle.popover
+            let popOver = vc.popoverPresentationController
+            popOver?.delegate = self
+            popOver?.barButtonItem = sender as? UIBarButtonItem
+            self.present(vc, animated:true, completion:nil)
+        }
+
+    
+//    @IBAction func profile(_ sender: Any) {
+//        let vc = storyboard?.instantiateViewController(withIdentifier:"popOver") as! SignOutPopVC
+//        vc.signOutDelegate = self
+//        vc.userName = userName
+////        vc.userEmailLBL.text = userName
+////        vc.preferredContentSize = CGSize(width:100, height:100)
+//        vc.preferredContentSize = CGSize(width:(UIScreen.main.bounds.width)*0.5, height:100)
+//        vc.modalPresentationStyle = UIModalPresentationStyle.popover
+//        let popOver = vc.popoverPresentationController
+//        popOver?.delegate = self
+//        popOver?.barButtonItem = sender as? UIBarButtonItem
+//        self.present(vc, animated:true, completion:nil)
+//    }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
@@ -65,6 +84,7 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
     }
     
     @IBAction func submitQstn(_ sender: Any) {
+        print(qstnTextView.text)
         let mailComposeViewController = configureMFMailComposer()
         if MFMailComposeViewController.canSendMail(){
             self.present(mailComposeViewController, animated: true, completion:nil)
@@ -77,8 +97,8 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
         mailComposerVC.setToRecipients(["dedeepyareddy255@gmail.com"])
-        mailComposerVC.setSubject("Hello")
-        mailComposerVC.setMessageBody("I have this below problem", isHTML:false)
+        mailComposerVC.setSubject("Need suggestion")
+        mailComposerVC.setMessageBody(qstnTextView.text, isHTML:false)
         mailComposerVC.setMessageBody("message body", isHTML:false)
         return mailComposerVC
     }

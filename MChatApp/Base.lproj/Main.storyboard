@@ -142,17 +142,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ads-G6-EJj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yTI-W1-MJK">
-                        <barButtonItem key="rightBarButtonItem" title="profile" id="3IP-ve-fkn">
-                            <connections>
-                                <action selector="profile:" destination="o19-ax-ta9" id="b08-Zu-lvQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="yTI-W1-MJK"/>
+                    <connections>
+                        <outlet property="qstnTextView" destination="v6i-iU-YeM" id="OTA-rp-GT3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yP-7F-5zP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680.8" y="-568.06596701649175"/>
+            <point key="canvasLocation" x="2020" y="-568.06596701649175"/>
         </scene>
         <!--Sign Out PopVC-->
         <scene sceneID="50N-tm-HXs">
@@ -197,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AY-kh-sqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.8000000000002" y="-580.65967016491754"/>
+            <point key="canvasLocation" x="2700" y="-580.65967016491754"/>
         </scene>
         <!--Sign InVC-->
         <scene sceneID="wef-t2-FEn">
@@ -222,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAR-93-lFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="-579"/>
+            <point key="canvasLocation" x="673" y="-568"/>
         </scene>
         <!--Moods TableVC-->
         <scene sceneID="ToV-EX-VlD">
