@@ -10,8 +10,13 @@ import UIKit
 
 class MoodsTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    var moodTableVm = MoodTableVM()
+    var moodDataObjs = [MoodData]()
+    var assesorResult:Assesor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        moodDataObjs = moodTableVm.createMoodDataObj()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,7 +25,7 @@ class MoodsTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        let count = 9
+        let count = moodTableVm.noOfEmotions()
         return count
     }
     
@@ -30,21 +35,21 @@ class MoodsTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         guard let cell = tableView.dequeueReusableCell(withIdentifier:cellIdentifier, for: indexPath) as? MoodTableViewCell else{
             fatalError("The dequeued cell is not an instance of MoodTableViewCell")
         }
-        //        let moodData = moodDataObjs[indexPath.row]
-        //        cell.desc.text = moodData.description
-        //        cell.emotionImgView.image = UIImage(named:moodData.emotionImg)
-        cell.desc.text = "test test"
-        cell.emotionImgView.image = UIImage()
+        let moodData = moodDataObjs[indexPath.row]
+        cell.desc.text = moodData.description
+        cell.emotionImgView.image = UIImage(named:moodData.emotionImg)
+//        cell.desc.text = "test test"
+//        cell.emotionImgView.image = UIImage()
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let moodData = moodDataObjs[indexPath.row]
-        //        if let assesorArry = moodTableVm.getAssesor(currentMood:moodData.moodAsses){
-        //            if (assesorArry.count==1){
-        //                assesorResult = assesorArry[0]
-        //            }
-        //        }
+        let moodData = moodDataObjs[indexPath.row]
+        if let assesorArry = moodTableVm.getAssesor(currentMood:moodData.moodAsses){
+            if (assesorArry.count==1){
+                assesorResult = assesorArry[0]
+            }
+        }
         performSegue(withIdentifier:"showModometer", sender:Any?.self)
     }
     
