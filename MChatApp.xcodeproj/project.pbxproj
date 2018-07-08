@@ -22,6 +22,7 @@
 		3F7F868320F280760096C204 /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F868220F280760096C204 /* MoodTableViewCell.swift */; };
 		3F7F868620F282FB0096C204 /* MoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F868520F282FB0096C204 /* MoodData.swift */; };
 		3F7F868820F283330096C204 /* Assesor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F868720F283330096C204 /* Assesor.swift */; };
+		3F7F868A20F283710096C204 /* MoodTableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F868920F283710096C204 /* MoodTableVM.swift */; };
 		3F9DF95C20E9D35E007937B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F9DF95B20E9D35E007937B8 /* GoogleService-Info.plist */; };
 		3FC5A62D20E946010076163D /* SignOutPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC5A62C20E946010076163D /* SignOutPopVC.swift */; };
 		4F3DE412F409B9811DB1D537 /* Pods_MChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF60FCD7093C32143B949799 /* Pods_MChatApp.framework */; };
@@ -70,6 +71,7 @@
 		3F7F868220F280760096C204 /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		3F7F868520F282FB0096C204 /* MoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodData.swift; sourceTree = "<group>"; };
 		3F7F868720F283330096C204 /* Assesor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assesor.swift; sourceTree = "<group>"; };
+		3F7F868920F283710096C204 /* MoodTableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableVM.swift; sourceTree = "<group>"; };
 		3F9DF95B20E9D35E007937B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FC5A62C20E946010076163D /* SignOutPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutPopVC.swift; sourceTree = "<group>"; };
 		56DD3E5BD4EF95F43EF05095 /* Pods-MChatAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MChatAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MChatAppTests/Pods-MChatAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				3F7F868220F280760096C204 /* MoodTableViewCell.swift */,
+				3F7F868920F283710096C204 /* MoodTableVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			files = (
 				3F7F868620F282FB0096C204 /* MoodData.swift in Sources */,
 				3F750B6820E8F17000C80644 /* HomeVC.swift in Sources */,
+				3F7F868A20F283710096C204 /* MoodTableVM.swift in Sources */,
 				3F750BA020E9190C00C80644 /* SubmitQstnVC.swift in Sources */,
 				3F750B9A20E9157C00C80644 /* MoodsTableVC.swift in Sources */,
 				3F7F868320F280760096C204 /* MoodTableViewCell.swift in Sources */,
