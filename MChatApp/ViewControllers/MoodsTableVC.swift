@@ -10,9 +10,14 @@ import UIKit
 
 class MoodsTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    @IBOutlet weak var tableView: UITableView!
     var moodTableVm = MoodTableVM()
     var moodDataObjs = [MoodData]()
     var assesorResult:Assesor?
+    
+    @IBAction func doneBarBtn(_ sender: Any) {
+        self.dismiss(animated:true, completion:nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
