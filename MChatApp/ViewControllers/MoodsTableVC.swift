@@ -15,19 +15,24 @@ class MoodsTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var moodDataObjs = [MoodData]()
     var assesorResult:Assesor?
     
-    @IBAction func doneBarBtn(_ sender: Any) {
-        self.dismiss(animated:true, completion:nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         moodDataObjs = moodTableVm.createMoodDataObj()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: UI
+    
+    @IBAction func doneBarBtn(_ sender: Any) {
+        self.dismiss(animated:true, completion:nil)
+    }
+    
+    
+    
+    // MARK: Table View
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         let count = moodTableVm.noOfEmotions()
@@ -58,6 +63,7 @@ class MoodsTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         performSegue(withIdentifier:"showModometer", sender:Any?.self)
     }
     
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 let vc = segue.destination as? MoodsAssesorVC
@@ -68,8 +74,4 @@ class MoodsTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 }
     }
 
-    //            if let result = assesorResult
-    //            {
-    //                print("segue:\(result.assesorDesc)")
-    //            }
 }

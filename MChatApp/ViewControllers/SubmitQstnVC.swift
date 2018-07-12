@@ -12,7 +12,7 @@ import FirebaseAuth
 import GoogleSignIn
 
 
-class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPopoverPresentationControllerDelegate, signOutDelegate {
+class SubmitQstnVC: UIViewController, UITextViewDelegate, MFMailComposeViewControllerDelegate, UIPopoverPresentationControllerDelegate, signOutDelegate{
     //    var signInVCObj:SignInVC?
     @IBOutlet weak var userNameLBL: UILabel!
      var userName:String?
@@ -20,6 +20,7 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        qstnTextView.delegate = self
         var viewControllers = navigationController?.viewControllers
 //        print(" COUNT \(String(describing: viewControllers?.count))")
         if(viewControllers?.count == 3){
@@ -51,20 +52,6 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
         }
 
     
-//    @IBAction func profile(_ sender: Any) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier:"popOver") as! SignOutPopVC
-//        vc.signOutDelegate = self
-//        vc.userName = userName
-////        vc.userEmailLBL.text = userName
-////        vc.preferredContentSize = CGSize(width:100, height:100)
-//        vc.preferredContentSize = CGSize(width:(UIScreen.main.bounds.width)*0.5, height:100)
-//        vc.modalPresentationStyle = UIModalPresentationStyle.popover
-//        let popOver = vc.popoverPresentationController
-//        popOver?.delegate = self
-//        popOver?.barButtonItem = sender as? UIBarButtonItem
-//        self.present(vc, animated:true, completion:nil)
-//    }
-    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
@@ -93,6 +80,7 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
         }
     }
     
+    // MARK:- MFMailComposer Delegates
     func configureMFMailComposer() -> MFMailComposeViewController{
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
@@ -112,6 +100,16 @@ class SubmitQstnVC: UIViewController, MFMailComposeViewControllerDelegate, UIPop
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated:true, completion:nil)
+    }
+
+  // MARK:- TextView Delegate
+    
+   func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 
 }
