@@ -87,7 +87,7 @@ class SubmitQstnVC: UIViewController, UITextViewDelegate, MFMailComposeViewContr
         mailComposerVC.setToRecipients(["dedeepyareddy255@gmail.com"])
         mailComposerVC.setSubject("Need suggestion")
         mailComposerVC.setMessageBody(qstnTextView.text, isHTML:false)
-        mailComposerVC.setMessageBody("message body", isHTML:false)
+        //mailComposerVC.setMessageBody("message body", isHTML:false)
         return mailComposerVC
     }
     

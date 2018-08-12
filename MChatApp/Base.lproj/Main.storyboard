@@ -250,7 +250,7 @@
                                                         <constraint firstAttribute="height" constant="58" id="U9R-TE-DNB"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;I feel… nervous, anxious, uncertain, fidgety, or rushed&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVl-Z8-sM7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;I feel… nervous, anxious, uncertain, fidgety, or rushed&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVl-Z8-sM7">
                                                     <rect key="frame" x="117" y="33.5" width="225" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -339,13 +339,6 @@
                                     <constraint firstAttribute="width" secondItem="Wkd-vX-Vls" secondAttribute="height" multiplier="26:23" id="B6q-CV-52y"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POi-aV-9nK">
-                                <rect key="frame" x="60" y="597" width="178" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -363,7 +356,7 @@
                     </view>
                     <connections>
                         <outlet property="assesorImgView" destination="Wkd-vX-Vls" id="p6M-kr-IbD"/>
-                        <outlet property="desc" destination="POi-aV-9nK" id="sjO-ah-smb"/>
+                        <outlet property="desc" destination="4FB-mT-ff3" id="5DJ-NK-aI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAM-70-Upb" userLabel="First Responder" sceneMemberID="firstResponder"/>

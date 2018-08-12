@@ -25,7 +25,7 @@ class MoodsAssesorVC: UIViewController {
                 subImage.frame = CGRect(x:0, y:0, width:assesorImgView.frame.size.width, height:assesorImgView.frame.size.height)
               assesorImgView.addSubview(subImage)
             }
-            desc.text = assesor.assesorDesc
+            desc.text = "Your current mood suggests that your mental status is functioning is at " + assesor.assesorDesc
         }
     }
 
